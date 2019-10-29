@@ -8,6 +8,13 @@
 
 int _printf(const char *format, ...);
 int _putchar(char c);
+
+/**
+  *struct specify - Struct for select specify of function printf.
+  *@type: Check types of specify.
+  *@ftype: Call function print types.
+  *Description: Specify of function printf.
+  */
 typedef struct specify
 {
 	char *type;

@@ -4,11 +4,12 @@
   * @s: char.
   * Return: function or NULL.
   */
-void (*get_spc(char s))(va_list)
+int (*get_spc(char s))(va_list)
 {
 	sp_t sp[] = {
 		{"s", print_s},
 		{"c", print_c},
+		{"%", print_m},
 		/* {"d", print_d}, */
 		/* {"i", print_i}, */
 		/* {"f", print_f}, */
@@ -18,11 +19,11 @@ void (*get_spc(char s))(va_list)
 	int index;
 
 	index = 0;
-	while (index < 2)
+	while (index < 3)
 	{
 		if (s == sp[index].type[0])
 			return (sp[index].ftype);
 		index++;
 	}
-	return (NULL);
+	return (0);
 }

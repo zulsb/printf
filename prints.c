@@ -4,7 +4,7 @@
   *@string: Argument string type va_list.
   *Return: Nothing.
  */
-void print_s(va_list string)
+int print_s(va_list string)
 {
 	char *str;
 	int index;
@@ -14,6 +14,7 @@ void print_s(va_list string)
 		str = "(null)";
 	for (index = 0; str[index] != 0; index++)
 		_putchar(str[index]);
+	return (index);
 }
 
 /**
@@ -22,11 +23,12 @@ void print_s(va_list string)
   *Return: Nothing.
  */
 
-void print_c(va_list c)
+int print_c(va_list c)
 {
 	char ch = va_arg(c, int);
 
 	_putchar(ch);
+	return (1);
 }
 
 /**
@@ -35,7 +37,7 @@ void print_c(va_list c)
   *Return: Nothing.
  */
 
-void print_i(va_list i)
+int print_i(va_list i)
 {
 	int index;
 	char *in;
@@ -43,6 +45,7 @@ void print_i(va_list i)
 	in = va_arg(i, char *);
 	for (index = 0; in[index] != 0; index++)
 		_putchar(in[index]);
+	return (index);
 }
 
 /**
@@ -50,7 +53,7 @@ void print_i(va_list i)
   *@d: Argument type va_list.
   *Return: Nothing.
  */
-void print_d(va_list d)
+int print_d(va_list d)
 {
 	int index;
 	char *dc;
@@ -58,6 +61,7 @@ void print_d(va_list d)
 	dc = va_arg(d, char *);
 	for (index = 0; dc[index] != 0; index++)
 		_putchar(dc[index]);
+	return (index);
 }
 
 /**
@@ -65,7 +69,7 @@ void print_d(va_list d)
   *@f: Argument type va_list.
   *Return: Nothing.
  */
-void print_f(va_list f)
+int print_f(va_list f)
 {
 	int index;
 	char *ft;
@@ -73,5 +77,20 @@ void print_f(va_list f)
 	ft = va_arg(f, char *);
 	for (index = 0; ft[index] != 0; index++)
 		_putchar(ft[index]);
+	return (index);
 }
+/**
+  *print_m - Function print a %.
+  *Return: Nothing.
+ */
+int print_m(va_list m)
+{
+	char *por;
+	int index;
 
+	por = va_arg(m, char*);
+	por = "%";
+	for (index = 0; por[index] != 0; index++)
+		_putchar(por[index]);
+	return (1);
+}

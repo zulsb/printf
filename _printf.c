@@ -7,34 +7,35 @@
 int _printf(const char *format, ...)
 {
 	va_list fmt;
-	void (*form)(va_list);
-	int index;
+	int (*form)(va_list);
+	int index, count;
 
 	va_start(fmt, format);
-	index = 0;
+	index = count = 0;
 	if (format == NULL || (format[index] == '%' && format[index + 1] == 0))
 		return (-1);
 	while (format[index] && format)
 	{
-		if (format[index] == '%' && format[index + 1] == '%')
-		{
-			index++;
-			_putchar(format[index]);
-		}
-		else if (format[index] == '%')
+		if (format[index] == '%')
 		{
 			form = get_spc(format[index + 1]);
 			if (form)
 			{
-				form(fmt);
+				count += form(fmt);
 				index++;
 			}
 			else
+			{
 				_putchar(format[index]);
+				count++;
+			}
 		}
 		else
+		{
 			_putchar(format[index]);
+			count++;
+		}
 		index++;
 	}
-	return (0);
+	return (count);
 }

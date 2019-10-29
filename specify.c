@@ -15,10 +15,9 @@ void (*get_spc(char s))(va_list)
 	index = 0;
 	while (index < 2)
 	{
-		printf("%s", sp[index].type[0]);
-			if (s == sp[index].type[0])
-				return (sp[index].ftype);
-			index++;
+		if (s == sp[index].type[0])
+			return (sp[index].ftype);
+		index++;
 	}
 	return (NULL);
 }

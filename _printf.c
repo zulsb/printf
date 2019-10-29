@@ -1,4 +1,13 @@
 #include "holberton.h"
+
+/**
+  *_printf - Function print output results.
+  *@format: Argument pointer type. 
+  *Return: 0.
+  *
+  */
+
+
 int _printf(const char *format, ...)
 {
 	va_list fmt;

@@ -1,4 +1,9 @@
 #include "holberton.h"
+/**
+  * get_spc - returns a function as the case may be.
+  * @s: char.
+  * Return: function or NULL.
+  */
 void (*get_spc(char s))(va_list)
 {
 	sp_t sp[] = {

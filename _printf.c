@@ -29,6 +29,8 @@ int _printf(const char *format, ...)
 				form(fmt);
 				index++;
 			}
+			else
+				_putchar(format[index]);
 		}
 		else
 			_putchar(format[index]);

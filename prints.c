@@ -37,7 +37,12 @@ void print_c(va_list c)
 
 void print_i(va_list i)
 {
-	write(1, va_arg(i, int), _strlen((char *)i));
+	int index;
+	char *in;
+
+	in = va_arg(i, char *);
+	for (index = 0; in[index] != 0; index++)
+		_putchar(in[index]);
 }
 
 /**
@@ -47,7 +52,12 @@ void print_i(va_list i)
  */
 void print_d(va_list d)
 {
-	write(1, va_arg(d, int), _strlen((char *)d));
+	int index;
+	char *dc;
+
+	dc = va_arg(d, char *);
+	for (index = 0; dc[index] != 0; index++)
+		_putchar(dc[index]);
 }
 
 /**
@@ -57,6 +67,11 @@ void print_d(va_list d)
  */
 void print_f(va_list f)
 {
-	write(1, va_arg(f, double), _strlen((char *)f));
+	int index;
+	char *ft;
+
+	ft = va_arg(f, char *);
+	for (index = 0; ft[index] != 0; index++)
+		_putchar(ft[index]);
 }
 

@@ -7,7 +7,7 @@ void print_s(va_list string)
 	str = va_arg(string, char*);
 	if (str == NULL)
 		str = "(null)";
-	for (index = 0; str[index] != 0; index++);
+	for (index = 0; str[index] != 0; index++)
 		_putchar(str[index]);
 }
 void print_c(va_list c)

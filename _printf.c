@@ -37,5 +37,6 @@ int _printf(const char *format, ...)
 		}
 		index++;
 	}
+	va_end(fmt);
 	return (count);
 }

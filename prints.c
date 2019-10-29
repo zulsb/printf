@@ -85,12 +85,9 @@ int print_f(va_list f)
  */
 int print_m(va_list m)
 {
-	char *por;
-	int index;
+	va_list pt;
 
-	por = va_arg(m, char*);
-	por = "%";
-	for (index = 0; por[index] != 0; index++)
-		_putchar(por[index]);
+	va_copy(pt, m);
+	_putchar('%');
 	return (1);
 }

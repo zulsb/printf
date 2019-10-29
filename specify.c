@@ -11,7 +11,7 @@ void (*get_spc(char s))(va_list)
 	};
 
 	int index;
-	
+
 	index = 0;
 	while (index < 2)
 	{

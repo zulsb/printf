@@ -1,5 +1,9 @@
 #include "holberton.h"
-
+/**
+  *print_numbers - Function print numbers
+  *@num: variable type unsigned int.
+  *Return: 0.
+ */
 int print_numbers(unsigned int num)
 {
 	unsigned int divide, module;

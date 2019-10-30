@@ -6,12 +6,9 @@ printf \- (print formatted) formatted output conversion.
 .SH SYNOPSIS
 #include <stdio.h>
 .PP
-int printf(const char *format, ...);
+int _printf(const char *format, ...);
 .SH DESCRIPTION
-The printf function prints a message on the screen using a formatted string that. It includes the instructions to mix multiple chains in the final chain to be displayed on the screen. It is a special function because it receives a variable number of parameters, the first parameter is fixed and is the format string. Through this function we can write data to the standard output device, being any combination of numerical values, single characters and character strings.
-.PP
-The printf function transports data from memory to the screen.
-The constant format string provides a description of the output, with placeholders marked by escape characters "%", to specify the relative location and type of output that the function must produce. The printf function returns the number of characters printed, or a negative value if an error occurs.
+The _printf function prints a message on the screen using a formatted string that. It includes the instructions to mix multiple chains in the final chain to be displayed on the screen. It is a special function because it receives a variable number of parameters, the first parameter is fixed and is the format string. Through this function we can write data to the standard output device, being any combination of numerical values, single characters and character strings.
 .PP
 \fBReturn value\fp
 .PP
@@ -32,36 +29,27 @@ For other conversions, the result is undefined.
 .PP
 The formatters allow to be modified to define number of digits or characters,
 entering the parameters for the number of digits and significant digits
-The arguments must correspond correctly (after type promotion) with the conversion specifier.
-By default, the arguments are used in the order given,
-where each '*' and each conversion specifier requests the following argument
-(and it is a mistake if enough arguments are given).
-You can also explicitly specify what argument is taken,
-in each place where an argument is required,
-by typing "% m $" instead of '%' and "* m $" instead of '*',
-where the decimal integer m denotes the position in the argument list of the desired argument,
-indexed from 1. Therefore,
-.PP
-printf ("% * d", width, num);
-.PP 
-printf ("% 2 $ * 1 $ d", width, num);
+
 .PP
 \fBType field characters\fp
-
-
-
-
-
-
-
-
-
-
-OPTIONS
-The nuseradd does not take any options. However, you can supply username.
-.SH SEE ALSO
-useradd(8), passwd(5), nuseradd.debian(8)
+.PP
+c	Character	When used with printf functions, specifies a single-byte character; when used with wprintf functions, specifies a wide character.
+.PP
+_printf("imprimir caracter: %c", 'c');
+.PP
+d	Integer	Signed decimal integer.
+.PP
+_printf("imprimir decimal: %d", 31);
+.PP
+i	Integer	Signed decimal integer.
+.PP
+_printf("imprimir entero: %i", 2);
+.PP
+s	String	When used with printf functions, specifies a single-byte or multi-byte character string; when used with wprintf functions, specifies a wide-character string. Characters are displayed up to the first null character or until the precision value is reached.
+.PP
+_printf("imprimir string: %s", "soy un string");
+.PP
 .SH BUGS
 No known bugs.
 .SH AUTHOR
-Luz Sánchez(1178@holbertonschool.com) and Josh Martinez(1175@holbertonschool.com)
+Luz Sánchez and Josh Martinez.

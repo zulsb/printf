@@ -10,20 +10,19 @@ int (*get_spc(char s))(va_list)
 		{"s", print_s},
 		{"c", print_c},
 		{"%", print_m},
-		/* {"d", print_d}, */
-		/* {"i", print_i}, */
-		/* {"f", print_f}, */
+		{"d", print_d},
+		{"i", print_i},
 		{NULL, NULL}
 	};
 
 	int index;
 
 	index = 0;
-	while (index < 3)
+	while (sp[index].type != NULL)
 	{
 		if (s == sp[index].type[0])
 			return (sp[index].ftype);
 		index++;
 	}
-	return (0);
+	return (NULL);
 }

@@ -23,6 +23,7 @@ typedef struct specify
 int _strlen(char *s);
 int _strcmp(char *s1, char *s2);
 int (*get_spc(char s))(va_list);
+int print_numbers(unsigned int num);
 int print_s(va_list string);
 int print_c(va_list c);
 int print_i(va_list i);

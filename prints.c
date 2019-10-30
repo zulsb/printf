@@ -39,13 +39,28 @@ int print_c(va_list c)
 
 int print_i(va_list i)
 {
-	int index;
-	char *in;
+	unsigned int positive;
+	int inter, count;
 
-	in = va_arg(i, char *);
-	for (index = 0; in[index] != 0; index++)
-		_putchar(in[index]);
-	return (index);
+	inter = va_arg(i, int);
+	if (inter < 0)
+	{
+		positive = (inter * -1);
+		_putchar('-');
+		count = 1;
+	}
+	else
+		positive = inter;
+	if (positive > 9)
+	{
+		count += print_numbers(positive);
+		return (count);
+	}
+	else
+	{
+		_putchar(positive);
+		return (++count);
+	}
 }
 
 /**
@@ -55,13 +70,28 @@ int print_i(va_list i)
  */
 int print_d(va_list d)
 {
-	int index;
-	char *dc;
+	unsigned int positive;
+	int dec, count;
 
-	dc = va_arg(d, char *);
-	for (index = 0; dc[index] != 0; index++)
-		_putchar(dc[index]);
-	return (index);
+	dec = va_arg(d, int);
+	if (dec < 0)
+	{
+		positive = (dec * -1);
+		_putchar('-');
+		count = 1;
+	}
+	else
+		positive = dec;
+	if (positive > 9)
+	{
+		count += print_numbers(positive);
+		return (count);
+	}
+	else
+	{
+		_putchar(positive);
+		return (++count);
+	}
 }
 /**
   *print_m - Function print a %.

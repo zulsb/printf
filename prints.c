@@ -58,7 +58,7 @@ int print_i(va_list i)
 	}
 	else
 	{
-		_putchar(positive);
+		_putchar(positive + 48);
 		return (++count);
 	}
 }
@@ -89,7 +89,7 @@ int print_d(va_list d)
 	}
 	else
 	{
-		_putchar(positive);
+		_putchar(positive + 48);
 		return (++count);
 	}
 }

@@ -63,24 +63,9 @@ int print_d(va_list d)
 		_putchar(dc[index]);
 	return (index);
 }
-
-/**
-  *print_f - Function print a float.
-  *@f: Argument type va_list.
-  *Return: Nothing.
- */
-int print_f(va_list f)
-{
-	int index;
-	char *ft;
-
-	ft = va_arg(f, char *);
-	for (index = 0; ft[index] != 0; index++)
-		_putchar(ft[index]);
-	return (index);
-}
 /**
   *print_m - Function print a %.
+  *@m: Argument type va_list.
   *Return: Nothing.
  */
 int print_m(va_list m)

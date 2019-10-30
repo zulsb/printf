@@ -85,9 +85,8 @@ int print_f(va_list f)
  */
 int print_m(va_list m)
 {
-	va_list pt;
+	(void) m;
 
-	va_copy(pt, m);
 	_putchar('%');
 	return (1);
 }
